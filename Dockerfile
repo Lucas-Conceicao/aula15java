@@ -4,7 +4,7 @@ COPY pom.xml .
 COPY src ./src 
 RUN mvnw -DskipTests package
 
-FROM eclipse-temurin-21-jdk
+FROM eclipse-temurin:21-jdk
 WORKDIR /app 
 COPY --from=builder /app/target/*.jar app.jar 
 
